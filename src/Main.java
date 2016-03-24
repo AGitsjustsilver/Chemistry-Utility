@@ -6,30 +6,79 @@ public class Main {
 	public static void main(String[] arg){
 		boolean con = true;
 		Scanner in = new Scanner(System.in);
-		System.out.println("What element do you want to know about?");	
-		while (con == true){
-			int num = in.nextInt();
-			if(num == 0 || num == 119){
-				if(num == 0){
-					System.out.println("There is no Element 0. Choose another one.");
-				}else if(num == 119){
-					System.out.println("There is no Element 119. Choose another one.");
+		Menu();
+		while(con == true){
+			String input1 = in.next();
+			if(input1.equalsIgnoreCase("a")){
+				while(con == true){
+					nameImput();
+				}
+			}else if(input1.equalsIgnoreCase("b")){
+				while(con == true){
+					numberInput();
 				}
 			}else{
-				Elements el = new Elements(num);
-				System.out.println(el.toString());	
-			}	
+				System.out.println("Please Choose an option.");
+			}
 		}
 		in.close();
+	}
+	
+	/**
+	 * Method that displays the options for the users. Might be temporary
+	 * @return Options to choose
+	 */
+	public static void Menu(){
+		System.out.println("If you want to Input an element's name and get information type: A");
+		System.out.println("If you know the element's Atomic Number type: B");
+		
+	}
+	
+	/**
+	 * Method that uses the element name and validates if it's correct or not
+	 * @return the information based on the element name
+	 */
+	public static void nameImput(){
+		@SuppressWarnings("resource")
+		Scanner in = new Scanner(System.in);
+		System.out.println("Please enter the name of the element. (make sure what you entered is spelled corectly)");
+		String input2 = in.next();
+		Elements el = new Elements(input2);
+		if(el.getElementName(el.getFind()).equalsIgnoreCase(input2)){
+			System.out.println(el.toString());
+		}else{
+			System.out.println(input2 + " is not an element or is not spelled correctly");
+		}
+		
+	}
+	
+	/**
+	 * Method that uses the atomic number and validates if it's within range
+	 * @return The information based on the atomic number
+	 */
+	public static void numberInput(){
+		@SuppressWarnings("resource")
+		Scanner in = new Scanner(System.in);
+		System.out.println("What element do you want to know about? (Use integer numbers from 1 to 118)");
+		int num = in.nextInt();
+		if(num <= 0 || num >= 119){
+			if(num <= 0){
+				System.out.println("There is no Element " + num + ". Choose another one.");
+			}else if(num >= 119){
+				System.out.println("There is no Element " + num + ". Choose another one.");
+			}
+		}else{
+			Elements el = new Elements(num);
+			System.out.println(el.toString());	
+		}
 	}
 	
 }
 /**
  * Idea list for program
  * 
- * 1.Elements reference
  * 2.molar-mass finder
  * 3.moles calculator
- * 4. Test Plz Ignore
+
  * 
  **/
