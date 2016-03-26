@@ -1,3 +1,10 @@
+/**
+ * 
+ * @author Alessandro Guaresti
+ * @version 0.0.4   3/25/16
+ *
+ */
+
 
 public class Elements{
 	
@@ -7,6 +14,13 @@ public class Elements{
 	private double[] atomicMass = {1.01, 4.00, 6.94, 9.01, 10.81, 12.01, 14.01, 16.00, 19.00, 20.18, 22.99, 24.31, 26.98, 28.09, 30.97, 32.07, 35.45, 39.95, 39.10, 40.08, 44.96, 47.87, 50.94, 52.00, 54.94, 55.85, 58.93, 58.69, 63.55, 65.39, 69.72, 72.61, 74.92, 78.96, 79.90, 83.80, 85.47, 87.62, 88.91, 91.22, 92.91, 95.94, 98, 101.07, 102.91, 106.42, 107.87, 112.41, 114.82, 118.71, 121.76, 127.60, 126.90, 131.29, 132.91, 137.33, 138.91, 140.12, 140.91, 144.24, 145, 150.36, 151.96, 157.25, 158.93, 162.50, 164.93, 167.26, 168.93, 173.04, 174.97, 179.49, 180.95, 183.84, 186.21, 190.23, 192.22, 195.08, 196.97, 200.59, 204.38, 207.2, 208.98, 209, 210, 222, 223, 226, 227, 232.04, 231.04, 238.03, 237, 244, 243, 247, 247, 251, 252, 257, 258, 259, 262, 261, 262, 266, 264, 269, 268, 281, 280, 285, 284, 289, 288, 293, 294, 294};
 	private int find;
 	
+	
+	/**
+	 * Default constructor That sets default to 0
+	 */
+	public Elements(){
+		this.find = 0;
+	}
 	
 	/**
 	 * Constructor thats takes in an integer number and set the find to the elements position in the arrays.
@@ -30,6 +44,18 @@ public class Elements{
 				this.find = index ;
 			}
 		}
+	}
+		
+	/**
+	 * Method that will take in a string with a certain set of conditions
+	 * 
+	 * @param String the actual Molecule
+	 * 
+	 * @return The molar mass of the molecule
+	 */
+	public double getMolarMass(String molecule){
+		
+		return 2.2; 
 	}
 	
 	/**
@@ -89,5 +115,12 @@ public class Elements{
 				+ "The Atomic Mass is: " + getAtomicMass(find) + ".";
 	}
 	
+	/**
+	 * Method to display molar mass
+	 * @return Molar mass info
+	 */
+	public String molarString(){
+		return "";
+	}
 	
 }

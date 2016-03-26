@@ -1,5 +1,8 @@
-import java.util.Scanner;
+/**
+ * @author Alessandro Guaresti 
+ */
 
+import java.util.Scanner;
 
 public class Main {
 	
@@ -17,6 +20,10 @@ public class Main {
 				while(con == true){
 					numberInput();
 				}
+			}else if(input1.equalsIgnoreCase("c")){
+				while(con == true){
+					molarMass();
+				}
 			}else{
 				System.out.println("Please Choose an option.");
 			}
@@ -31,6 +38,7 @@ public class Main {
 	public static void Menu(){
 		System.out.println("If you want to Input an element's name and get information type: A");
 		System.out.println("If you know the element's Atomic Number type: B");
+		System.out.println("If you want to know the molar mass of any molecule type: C");
 		
 	}
 	
@@ -73,6 +81,19 @@ public class Main {
 		}
 	}
 	
+	/**
+	 * Method that uses
+	 * @return the Molar Mass of the molecule
+	 */
+	public static void molarMass(){
+		@SuppressWarnings("resource")
+		Scanner in = new Scanner(System.in);
+		System.out.println("What molecule do you want to know the molar mass of? (use symbols followed by subscript ex CH4)");
+		String mol = in.next();
+		Elements el = new Elements();
+		el.getMolarMass(mol);
+		System.out.println(el.molarString());
+	}
 }
 /**
  * Idea list for program
