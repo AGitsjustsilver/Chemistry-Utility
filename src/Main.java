@@ -22,6 +22,10 @@ public class Main {
 				}
 			}else if(input1.equalsIgnoreCase("c")){
 				while(con == true){
+					symbolInput();
+				}
+			}else if(input1.equalsIgnoreCase("d")){
+				while(con == true){
 					molarMass();
 				}
 			}else{
@@ -38,8 +42,9 @@ public class Main {
 	public static void Menu(){
 		System.out.println("If you want to Input an element's name and get information type: A");
 		System.out.println("If you know the element's Atomic Number type: B");
-		System.out.println("If you want to know the molar mass of any molecule type: C");
-		
+		System.out.println("If you know the element's Symbol type: C");
+		System.out.println("If you want to know the molar mass of any molecule type: D");
+
 	}
 	
 	/**
@@ -58,6 +63,23 @@ public class Main {
 			System.out.println(input2 + " is not an element or is not spelled correctly");
 		}
 		
+	}
+	
+	/**
+	 * Method that uses the Element's Symbol To return information and validates that it is an Element
+	 * @return The information based on the Symbol
+	 */
+	public static void symbolInput(){
+		@SuppressWarnings("resource")
+		Scanner in = new Scanner(System.in);
+		System.out.println("What element do you want to know about? (Enter the element's symbol)");
+		String symbol = in.nextLine();
+		Elements el = new Elements(symbol);
+		if(el.getElementSymbol(el.getFind()).equalsIgnoreCase(symbol)){
+			System.out.println(el.toString());
+		}else{
+			System.out.println(symbol + " is not an element's symbol");
+		}
 	}
 	
 	/**

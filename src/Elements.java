@@ -42,6 +42,8 @@ public class Elements{
 		for(int index = 0; index < atomicNumber.length; index++){
 			if(elementName[index].equalsIgnoreCase(name)){
 				this.find = index ;
+			}else if(elementSymbol[index].equalsIgnoreCase(name)){
+				this.find = index ; 
 			}
 		}
 	}
@@ -61,7 +63,7 @@ public class Elements{
 		name.getChars(0, nameLength, ind, 0); 
 		double result = 0.0;
 		for(int i = 0; i < nameLength; i++){
-			
+			name.indexOf(i);
 		}
 		if(name.isEmpty()){
 			

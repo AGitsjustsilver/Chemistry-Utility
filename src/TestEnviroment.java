@@ -13,11 +13,11 @@ public class TestEnviroment {
 	}
 	
 	public static void thing(String name){
-		char[] ind = null;
+		char[] ind = {};
 		name.getChars(0, name.length(),	ind, 0);
-		
-		
-		
+		for(int i = 0; i < ind.length; i++){
+			System.out.print(ind[i]);
+		}
 	}
 	
 }
