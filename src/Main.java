@@ -26,7 +26,11 @@ public class Main {
 				}
 			}else if(input1.equalsIgnoreCase("d")){
 				while(con == true){
-					molarMass();
+					molarMenu();
+					String input2 = in.nextLine();
+					while(con == true){
+						
+					}
 				}
 			}else{
 				System.out.println("Please Choose an option.");
@@ -101,6 +105,10 @@ public class Main {
 			Elements el = new Elements(num);
 			System.out.println(el.toString());	
 		}
+	}
+	
+	public static void molarMenu(){
+		System.out.println("How many Atoms are there?");
 	}
 	
 	/**
