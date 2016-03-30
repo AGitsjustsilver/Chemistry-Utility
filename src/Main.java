@@ -112,9 +112,6 @@ public class Main {
 		Scanner in = new Scanner(System.in);
 		System.out.println("What molecule do you want to know the molar mass of? (use symbols followed by subscript ex CH4)");
 		String mol = in.next();
-		Elements el = new Elements();
-		el.getMolarMass(mol);
-		System.out.println(el.molarString());
 	}
 }
 /**

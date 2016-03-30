@@ -1,7 +1,7 @@
 /**
  * 
  * @author Alessandro Guaresti
- * @version 0.0.4   3/25/16
+ * @version 0.0.4   3/30/16
  *
  */
 
@@ -54,22 +54,27 @@ public class Elements{
 	 * @param String the actual Molecule
 	 * 
 	 */
-	public double getMolarMass(String molecule){
+	/*public double getMolarMass(String molecule){
 		//to separate the string into pieces and recall the method recursively
 		String name = molecule;
 		int nameLength = name.length();
-		char[] ind = null;
-		//splits the string into an array of characters 
-		name.getChars(0, nameLength, ind, 0); 
 		double result = 0.0;
-		for(int i = 0; i < nameLength; i++){
-			name.indexOf(i);
-		}
+		String newName = "";
+		
 		if(name.isEmpty()){
 			
 		}else{
 			getMolarMass(name);
 		}
+		return result;
+	}*/
+	
+	public double getMolarMass(String atom1, int numOfAtom1){
+		double result = 0.0;
+		atom1.trim();
+		Elements i = new Elements(atom1);
+		result += i.getAtomicMass(i.getFind());
+		result *= numOfAtom1;
 		return result;
 	}
 	
