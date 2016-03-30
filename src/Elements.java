@@ -51,11 +51,24 @@ public class Elements{
 	 * 
 	 * @param String the actual Molecule
 	 * 
-	 * @return The molar mass of the molecule
 	 */
 	public double getMolarMass(String molecule){
-		
-		return 2.2; 
+		//to separate the string into pieces and recall the method recursively
+		String name = molecule;
+		int nameLength = name.length();
+		char[] ind = null;
+		//splits the string into an array of characters 
+		name.getChars(0, nameLength, ind, 0); 
+		double result = 0.0;
+		for(int i = 0; i < nameLength; i++){
+			
+		}
+		if(name.isEmpty()){
+			
+		}else{
+			getMolarMass(name);
+		}
+		return result;
 	}
 	
 	/**
