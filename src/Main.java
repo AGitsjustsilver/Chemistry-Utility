@@ -29,7 +29,11 @@ public class Main {
 					molarMenu();
 					String input2 = in.nextLine();
 					while(con == true){
-						
+						if(input2.equalsIgnoreCase("a")){
+							
+						}else {
+							System.out.println("Please choose an option.");
+						}
 					}
 				}
 			}else{
@@ -108,7 +112,15 @@ public class Main {
 	}
 	
 	public static void molarMenu(){
-		System.out.println("How many Atoms are there?");
+		System.out.println("Are you finding individual atoms or molecules? (type Atoms or Molecules)");
+	}
+	
+	public static void molarChoice(String input){
+		String newInput = input;
+		newInput.trim();
+		if(newInput.startsWith("a")){
+			
+		}
 	}
 	
 	/**
