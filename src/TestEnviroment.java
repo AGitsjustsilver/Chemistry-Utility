@@ -1,18 +1,23 @@
-import java.util.Scanner;
+import javax.swing.*;
 
 public class TestEnviroment {
 	
 	public static void main(String[] arg){
-		Scanner in = new Scanner(System.in);
-		System.out.println("Type something");
-		String thang = in.nextLine();
-		thing(thang);
-		
-		in.close();
+		draw();
+	}
+	
+	public static void draw(){
+		JFrame back = new JFrame();
+		back.setSize(500, 650);
+		back.setVisible(true);
+		back.setTitle("Chemistry Utility");
+		pannel();
 		
 	}
 	
-	public static void thing(String name){
+	public static void pannel(){
+		JPanel main = new JPanel();
+		main.setBounds(0, 0, 450, 600);
 		
 	}
 	

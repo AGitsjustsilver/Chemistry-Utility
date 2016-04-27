@@ -54,20 +54,6 @@ public class Elements{
 	 * @param String the actual Molecule
 	 * 
 	 */
-	/*public double getMolarMass(String molecule){
-		//to separate the string into pieces and recall the method recursively
-		String name = molecule;
-		int nameLength = name.length();
-		double result = 0.0;
-		String newName = "";
-		
-		if(name.isEmpty()){
-			
-		}else{
-			getMolarMass(name);
-		}
-		return result;
-	}*/
 	
 	public double getMolarMass(String atom1, int numOfAtom1){
 		double result = 0.0;
@@ -75,6 +61,12 @@ public class Elements{
 		Elements i = new Elements(atom1);
 		result += i.getAtomicMass(i.getFind());
 		result *= numOfAtom1;
+		return result;
+	}
+	
+	public double getMolarMass(String atom1, int numOfAtom1, String atom2, int numOfAtom2){
+		double result;
+		result = getMolarMass(atom1, numOfAtom1) + getMolarMass(atom2, numOfAtom2); 
 		return result;
 	}
 	
@@ -135,12 +127,5 @@ public class Elements{
 				+ "The Atomic Mass is: " + getAtomicMass(find) + ".";
 	}
 	
-	/**
-	 * Method to display molar mass
-	 * @return Molar mass info
-	 */
-	public String molarString(){
-		return "";
-	}
 	
 }
