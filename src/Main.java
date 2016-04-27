@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 public class Main {
 	
+	public static final int STOP_BOX = -1;
+	
 	public static void main(String[] arg){
 		boolean con = true;
 		Scanner in = new Scanner(System.in);
@@ -26,13 +28,13 @@ public class Main {
 				}
 			}else if(input1.equalsIgnoreCase("d")){
 				while(con == true){
-					molarMenu();
-					String input2 = in.nextLine();
+					System.out.println("Are you finding individual atoms or molecules? (type Atoms or Molecules)");
 					while(con == true){
+						String input2 = in.nextLine();
 						if(input2.equalsIgnoreCase("a")){
-							
-						}else {
-							System.out.println("Please choose an option.");
+							molarMass();
+						}else if(input2.equalsIgnoreCase("m")){
+							molarMass2();
 						}
 					}
 				}
@@ -110,18 +112,7 @@ public class Main {
 			System.out.println(el.toString());	
 		}
 	}
-	
-	public static void molarMenu(){
-		System.out.println("Are you finding individual atoms or molecules? (type Atoms or Molecules)");
-	}
-	
-	public static void molarChoice(String input){
-		String newInput = input;
-		newInput.trim();
-		if(newInput.startsWith("a")){
-			
-		}
-	}
+
 	
 	/**
 	 * Method that uses
@@ -130,8 +121,29 @@ public class Main {
 	public static void molarMass(){
 		@SuppressWarnings("resource")
 		Scanner in = new Scanner(System.in);
-		System.out.println("What molecule do you want to know the molar mass of? (use symbols followed by subscript ex CH4)");
+		System.out.println("What element do you want to know the molar mass of?");
 		String mol = in.next();
+		System.out.println("How many of this element are there");
+		int num = in.nextInt();
+		Elements el = new Elements();
+		System.out.println(el.getMolarMass(mol, num));
+	}
+	
+	public static void molarMass2(){
+		@SuppressWarnings("resource")
+		Scanner in = new Scanner(System.in);
+		System.out.println("Whats your first atom?");
+		String mol1 = in.nextLine();
+		System.out.println("how many are there?");
+		int num1 = in.nextInt();
+		System.out.println("Whats your second atom?");
+		String mol2 = in.nextLine();
+		System.out.println("how many are there?");
+		int num2 = in.nextInt();
+		Elements el = new Elements();
+		System.out.println(el.getMolarMass(mol1, num1, mol2, num2));
+		
+		
 	}
 }
 /**
