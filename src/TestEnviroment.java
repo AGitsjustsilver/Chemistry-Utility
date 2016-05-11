@@ -14,7 +14,7 @@ public class TestEnviroment {
 		pannel();
 		
 	}
-	// now on desktop
+	// now on desktop and new on laptop
 	
 	public static void pannel(){
 		JPanel main = new JPanel();
