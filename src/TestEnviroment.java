@@ -1,25 +1,22 @@
-import javax.swing.*;
+import javafx.application.Application;
+import javafx.stage.Stage;
 
-public class TestEnviroment {
-	
+public class TestEnviroment extends Application{
+
 	public static void main(String[] arg){
-		draw();
+		launch(arg);
 	}
 	
-	public static void draw(){
-		JFrame back = new JFrame();
-		back.setSize(500, 650);
-		back.setVisible(true);
-		back.setTitle("Chemistry Utility");
-		pannel();
-		
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		// TODO Auto-generated method stub
+		primaryStage.setTitle("Shiet");
+		primaryStage.setResizable(true);
+		primaryStage.setHeight(330);
+		primaryStage.setWidth(330);
+		primaryStage.show();
 	}
-	// now on desktop and new on laptop
 	
-	public static void pannel(){
-		JPanel main = new JPanel();
-		main.setBounds(0, 0, 450, 600);
-		
-	}
+	
 	
 }
