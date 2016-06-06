@@ -1,7 +1,7 @@
 /**
  * 
  * @author Alessandro Guaresti
- * @version 0.0.4   3/30/16
+ * @version 0.0.5   6/6/16
  *
  */
 
@@ -124,7 +124,7 @@ public class Elements{
 		return "For the Element " + getElementName(find) + ".\n"
 				+ "The Symbol is: " + getElementSymbol(find) + ".\n"
 				+ "The Atomic Number is: " + getAtomicNumber(find) + ".\n"
-				+ "The Atomic Mass is: " + getAtomicMass(find) + ".";
+				+ "The Atomic Mass of: " + getAtomicMass(find) + " amu.";
 	}
 	
 	
