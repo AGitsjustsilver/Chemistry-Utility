@@ -102,6 +102,7 @@ public class Display extends Application {
 					nameInput(p);
 				}else{
 					inp.setText("");
+					submit.setText("Reset");
 				}
 			}
 
@@ -145,6 +146,7 @@ public class Display extends Application {
 					nameInput(p);
 				}else{
 					inp.setText("");
+					submit.setText("Reset");
 				}
 			}
 		});
@@ -187,6 +189,7 @@ public class Display extends Application {
 					symbolInput(p);
 				}else{
 					inp.setText("");
+					submit.setText("Reset");
 				}
 			}
 		});
