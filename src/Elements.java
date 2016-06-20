@@ -54,14 +54,13 @@ public class Elements{
 	 * @param String the actual Molecule
 	 * 
 	 */
-	public double getMolarMass(String compund){
+	public double getMolarMass(Compound comp){
 		/*
 		 * get a single string that is the compound. 
 		 * it then gets broken down into the respective atoms and number of atoms. 
 		 * And then gets each individual mass and adds them up. 
 		 */
 		double result = 0.0;
-		int stringLength = compund.length();
 		
 		
 		return result;
