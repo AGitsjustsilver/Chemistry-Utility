@@ -1,4 +1,6 @@
 
+import org.apache.commons.lang3.math.NumberUtils;
+
 public class Compound extends Elements {
 	
 	private String compound;
