@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * 
  * @author Alessandro Guaresti
@@ -61,7 +63,12 @@ public class Elements{
 		 * And then gets each individual mass and adds them up. 
 		 */
 		double result = 0.0;
-		
+		ArrayList<String> elements = comp.getElements();
+		ArrayList<Integer> numberOf = comp.getNumbers();
+		int lengths = (int)( ( elements.size() + numberOf.size() ) / 2 );
+		for(int i = 0; i < lengths; i++){
+			result += getMolarMass(elements.get(i), numberOf.get(i));	
+		}
 		
 		return result;
 	}
@@ -72,24 +79,6 @@ public class Elements{
 		Elements i = new Elements(atom1);
 		result += i.getAtomicMass(i.getFind());
 		result *= numOfAtom1;
-		return result;
-	}
-	
-	public double getMolarMass(String atom1, int numOfAtom1, String atom2, int numOfAtom2){
-		double result = 0.0;
-		result = getMolarMass(atom1, numOfAtom1) + getMolarMass(atom2, numOfAtom2); 
-		return result;
-	}
-	
-	public double getMolarMass(String atom1, int numOfAtom1, String atom2, int numOfAtom2, String atom3, int numOfAtom3){
-		double result = 0.0;
-		result = getMolarMass(atom1, numOfAtom1, atom2, numOfAtom2) + getMolarMass(atom3, numOfAtom3);
-		return result;
-	}
-	
-	public double getMolarMass(String atom1, int numOfAtom1, String atom2, int numOfAtom2, String atom3, int numOfAtom3, String atom4, int numOfAtom4){
-		double result = 0.0;
-		result = getMolarMass(atom1, numOfAtom1, atom2, numOfAtom2) + getMolarMass(atom3, numOfAtom3, atom4, numOfAtom4);
 		return result;
 	}
 	
@@ -150,5 +139,6 @@ public class Elements{
 				+ "The Atomic Mass of: " + getAtomicMass(find) + " amu.";
 	}
 	
+
 	
 }

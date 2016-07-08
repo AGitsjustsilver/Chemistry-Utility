@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 
 public class Display extends Application {
 	private static Elements in;
+	private static Compound in1;
 	
 	public static void main(String[] args){
 		launch(args);
@@ -214,15 +215,37 @@ public class Display extends Application {
 		grid.setHgap(10);
 		grid.setVgap(10);
 		
-		addText(grid, "Fifth Menu", 0, 0);
+		addText(grid, "Molar Mass", 0, 0);
+		
+		addText(grid, "Of what compound do you wish to find the molar mass?", 0, 1);
 
+		TextField inp = new TextField();
+		grid.add(inp, 0, 2);
+		
+		Button submit = new Button("Submit");
+		submit.setOnMousePressed(new EventHandler<Event>(){
+			public void handle(Event event){
+				String response = inp.getText();
+				in  = new Elements();
+				in1 = new Compound(response);
+				//the toString on the compounds class
+				addText(grid, "filler", 0, 3);
+				if(response.isEmpty()){
+					molarMassInput(p);
+				}else{
+					inp.setText("");
+					submit.setText("Reset");
+				}
+			}
+		});
+		
 		Button back = new Button("Go back");
 		back.setOnMousePressed(new EventHandler<Event>() {
 			public void handle(Event event){
 				mainInput(p);
 			}
 		});
-		grid.add(back, 1, 1);
+		grid.add(back, 1, 2);
 		
 		Scene in = new Scene(grid, 600, 400);
 		
@@ -233,7 +256,7 @@ public class Display extends Application {
 		Text rules = new Text();
 		rules.setText(text);
 		grid.add(rules, col, row);
-		
 	}
+	
 	
 }

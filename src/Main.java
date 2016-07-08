@@ -33,8 +33,6 @@ public class Main {
 						String input2 = in.nextLine();
 						if(input2.equalsIgnoreCase("a")){
 							molarMass();
-						}else if(input2.equalsIgnoreCase("m")){
-							molarMass2();
 						}
 					}
 				}
@@ -128,23 +126,7 @@ public class Main {
 		Elements el = new Elements();
 		System.out.println(el.getMolarMass(mol, num));
 	}
-	
-	public static void molarMass2(){
-		@SuppressWarnings("resource")
-		Scanner in = new Scanner(System.in);
-		System.out.println("Whats your first atom?");
-		String mol1 = in.nextLine();
-		System.out.println("how many are there?");
-		int num1 = in.nextInt();
-		System.out.println("Whats your second atom?");
-		String mol2 = in.nextLine();
-		System.out.println("how many are there?");
-		int num2 = in.nextInt();
-		Elements el = new Elements();
-		System.out.println(el.getMolarMass(mol1, num1, mol2, num2));
-		
-		
-	}
+
 }
 /**
  * Idea list for program

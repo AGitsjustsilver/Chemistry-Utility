@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -12,17 +11,10 @@ public class TestEnviroment{
 		Scanner in = new Scanner(System.in);
 		System.out.println("Please insert compund");
 		String inp = in.nextLine();
-//		m = new Elements()
-		
-		ArrayList<String> bits = new ArrayList<String>();
-		for(int i = 0; i < inp.length(); i++){
-			bits.add(inp.substring(i, i+1));
-		}
-		if(bits.contains()){
-			
-		}
-		
-//		System.out.println(m.getMolarMass(n));
+		m = new Elements();	
+		n = new Compound(inp);
+		System.out.println(n.getElements());
+		System.out.println(n.getNumbers());
 		in.close();
 	}
 	
