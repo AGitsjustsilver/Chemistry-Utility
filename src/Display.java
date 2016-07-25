@@ -230,7 +230,7 @@ public class Display extends Application {
 				in  = new Elements();
 				in1 = new Compound(response);
 				//the toString on the compounds class
-				addText(grid, "filler", 0, 3);
+				addText(grid, in1.toString(), 0, 3);
 				if(response.isEmpty()){
 					molarMassInput(p);
 				}else{
@@ -239,6 +239,7 @@ public class Display extends Application {
 				}
 			}
 		});
+		grid.add(submit, 1, 2);
 		
 		Button back = new Button("Go back");
 		back.setOnMousePressed(new EventHandler<Event>() {
@@ -246,7 +247,7 @@ public class Display extends Application {
 				mainInput(p);
 			}
 		});
-		grid.add(back, 1, 2);
+		grid.add(back, 1, 3);
 		
 		Scene in = new Scene(grid, 600, 400);
 		
@@ -259,9 +260,7 @@ public class Display extends Application {
 		grid.add(rules, col, row);
 	}
 	
-	public static void addText(GridPane grid, long text, int col, int row){
-		Text rules = new Text(text);
-	}
+	
 		
 	
 }

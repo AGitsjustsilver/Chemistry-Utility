@@ -52,12 +52,36 @@ public class Compound extends Elements {
 		return result;
 	}
 	
-	//need way to get the molar Mass into a string via toString 
-	//also it would be good to add the elements that went into the compound and their info
 	public String toString(){
-		
-		
-		
-		return null;
+		String result = "";
+		String elemtn = "The elements in the compound are: ";
+		ArrayList<String> elements = getElements();
+		ArrayList<Integer> numOfElements = getNumbers();		
+		int lenght = (int)((getNumbers().size() + getElements().size()) / 2);
+		for(int i = 0; i < lenght; i++){
+			in = new Elements(elements.get(i));
+			String elemetn = in.getElementName(in.getFind());
+			if((i != lenght-1)){
+				elemtn += elemetn + ", ";				
+			}else{
+				elemtn += "and " + elemetn + ".\n";
+			}
+			
+		}
+		result += elemtn;
+		String compMass = "The total mass of the compound is: " + getMolarMass(this) + ".\n";
+		result += compMass;
+		String indMass = "The individual masses are: ";
+		for(int k = 0; k < lenght; k++){
+			in = new Elements(elements.get(k));
+			double elemetn = in.getMolarMass(elements.get(k), numOfElements.get(k));
+			if((k != lenght-1)){
+				indMass += elemetn + ", ";				
+			}else{
+				indMass += "and " + elemetn + ".\n";
+			}
+		}
+		result += indMass;
+		return result;
 	}
 }
