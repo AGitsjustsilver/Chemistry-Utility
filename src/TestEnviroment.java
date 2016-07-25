@@ -5,6 +5,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToolBar;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import org.apache.commons.lang3.time.StopWatch;
@@ -22,32 +23,31 @@ public class TestEnviroment extends Application{
 		grid.setVgap(10);
 		grid.setHgap(10);
 		
-		Display.addText(grid, "do stuff", 0, 0);
+		
+		Display.addText(grid, "do stuff", 0, 1);
 		
 		TextField input = new TextField();
-		grid.add(input, 0, 1);
+		grid.add(input, 0, 2);
 		
 		Button make = new Button("do");
-		grid.add(make, 1, 1);
 		make.setOnMouseClicked(new EventHandler<Event>() {
 
 			@Override
 			public void handle(Event event) {
-				StopWatch in = new StopWatch();
-				in.start();
-				while(true){
-					Display.addText(grid, in.getSplitTime(), 0, 3);
-				}
+				Display.addText(grid, input.getText(), 0, 3);
 			}
 		});
 		
+		
+		ToolBar tool = new ToolBar(make);
+		grid.add(tool, 0, 0);
 		
 		Scene a = new Scene(grid, 600, 600);
 		primaryStage.setScene(a);
 		primaryStage.setTitle("Test");
 		primaryStage.show();
 	}
-	
+
 	public void times(){
 		StopWatch in = new StopWatch();
 		in.start();
@@ -61,12 +61,12 @@ public class TestEnviroment extends Application{
 		}
 	}
 	
-	public void resetTimer(){
-		StopWatch in = new StopWatch();
-		in.start();
-		if(){
-			
-		}
-	}
-	
+//	public void resetTimer(){
+//		StopWatch in = new StopWatch();
+//		in.start();
+//		if(){
+//			
+//		}
+//	}
+//	
 }
