@@ -12,7 +12,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import org.apache.commons.lang3.time.StopWatch;
 
 public class Display extends Application {
 	private static Elements in;
