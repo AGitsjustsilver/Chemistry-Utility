@@ -1,6 +1,8 @@
 import java.awt.Color;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -8,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 
@@ -26,6 +29,13 @@ public class TestEnviroment extends Application{
 		redPlane.setStyle("-fx-background-color: red;");
 		
 		Button b = new Button("button");
+		b.setOnAction(new EventHandler<ActionEvent>() {
+			
+			@Override
+			public void handle(ActionEvent event) {
+				
+			}
+		});
 		root.getChildren().add(b);
 		
 		root.getChildren().add(redPlane);
@@ -38,5 +48,5 @@ public class TestEnviroment extends Application{
 		pStage.show();
 	}
 
-
+	
 }

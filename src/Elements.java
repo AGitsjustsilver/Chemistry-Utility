@@ -69,7 +69,6 @@ public class Elements{
 		for(int i = 0; i < lengths; i++){
 			result += getMolarMass(elements.get(i), numberOf.get(i));	
 		}
-		
 		return result;
 	}
 	
