@@ -2,8 +2,6 @@
  * @author: Alessandro Guaresti
  */
 import java.util.ArrayList;
-
-import javafx.application.Application;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -15,25 +13,10 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class Display extends Application {
+public class Displays{
 	private static Elements in;
 	private static Compound in1;
-	
-	public static void main(String[] args){
-		launch(args);
-	}
-	
-	public void start(Stage primaryStage){
-		mainInput(primaryStage);
-//		nameInput(primaryStage);
-//		numberInput(primaryStage);
-//		symbolInput(primaryStage);
-//		molarMassInput(primaryStage);
 		
-		primaryStage.setTitle("Chemistry-Utility");
-		primaryStage.show();
-	}
-	
 	public static void mainInput(Stage p){
 		GridPane grid = new GridPane();
 		grid.setAlignment(Pos.CENTER);
@@ -45,13 +28,13 @@ public class Display extends Application {
 		title.setFont(Font.font(25));
 		grid.add(title, 0, 0);
 		
-		addText(grid, "If you want to Input an element's name and get information type: A", 0, 1);
+		ChemUtils.addText(grid, "If you want to Input an element's name and get information type: A", 0, 1);
 	
-		addText(grid, "If you know the element's Atomic Number type: B", 0, 2);
+		ChemUtils.addText(grid, "If you know the element's Atomic Number type: B", 0, 2);
 		
-		addText(grid, "If you know the element's Symbol type: C", 0, 3);
+		ChemUtils.addText(grid, "If you know the element's Symbol type: C", 0, 3);
 		
-		addText(grid, "If you want to know the molar mass of any molecule type: D", 0, 4);
+		ChemUtils.addText(grid, "If you want to know the molar mass of any molecule type: D", 0, 4);
 		
 		TextField response = new TextField();
 		grid.add(response, 0, 5);
@@ -69,7 +52,7 @@ public class Display extends Application {
 				}else if(response.getText().equalsIgnoreCase("d")){
 					molarMassInput(p);
 				}else{
-					addText(grid, "You must Input one of the options", 0, 6);
+					ChemUtils.addText(grid, "You must Input one of the options", 0, 6);
 				}
 				
 			}
@@ -87,9 +70,9 @@ public class Display extends Application {
 		grid.setHgap(10);
 		grid.setVgap(10);
 		
-		addText(grid, "Name Input", 0, 0);
+		ChemUtils.addText(grid, "Name Input", 0, 0);
 		
-		addText(grid, "Please enter the name of the element. (make sure what you entered is spelled corectly)",0, 1);
+		ChemUtils.addText(grid, "Please enter the name of the element. (make sure what you entered is spelled corectly)",0, 1);
 		
 		TextField inp = new TextField();
 		grid.add(inp, 0, 2);
@@ -100,9 +83,9 @@ public class Display extends Application {
 				String response = inp.getText();
 				if(verify(1, response)){
 					in = new Elements(response);
-					addText(grid, in.toString(),0, 3);
+					ChemUtils.addText(grid, in.toString(),0, 3);
 				}else{
-					addText(grid, "Input a valid response", 0, 3);
+					ChemUtils.addText(grid, "Input a valid response", 0, 3);
 					inp.setText("");
 				}
 				if(response.isEmpty()){
@@ -135,9 +118,9 @@ public class Display extends Application {
 		grid.setHgap(10);
 		grid.setVgap(10);
 		
-		addText(grid, "Atomic Number Input", 0, 0);
+		ChemUtils.addText(grid, "Atomic Number Input", 0, 0);
 
-		addText(grid, "What element do you want to know about? (Use integer numbers from 1 to 118)", 0, 1);
+		ChemUtils.addText(grid, "What element do you want to know about? (Use integer numbers from 1 to 118)", 0, 1);
 		
 		TextField inp = new TextField();
 		grid.add(inp, 0, 2);
@@ -149,9 +132,9 @@ public class Display extends Application {
 				String response = inp.getText();
 				if(verify(3, response)){
 					in = new Elements(new Integer(response));
-					addText(grid, in.toString(), 0, 3);
+					ChemUtils.addText(grid, in.toString(), 0, 3);
 				}else{
-					addText(grid, "Input a valid response", 0, 3);
+					ChemUtils.addText(grid, "Input a valid response", 0, 3);
 				}
 				if(response.isEmpty()){
 					numberInput(p);
@@ -182,9 +165,9 @@ public class Display extends Application {
 		grid.setHgap(10);
 		grid.setVgap(10);
 		
-		addText(grid, "Element Symbol Input", 0, 0);
+		ChemUtils.addText(grid, "Element Symbol Input", 0, 0);
 		
-		addText(grid, "What element do you want to know about? (Enter the element's symbol)", 0, 1);
+		ChemUtils.addText(grid, "What element do you want to know about? (Enter the element's symbol)", 0, 1);
 		
 		TextField inp = new TextField();
 		grid.add(inp, 0, 2);
@@ -196,9 +179,9 @@ public class Display extends Application {
 				String response = inp.getText();
 				if(verify(2, response)){
 					in = new Elements(response);
-					addText(grid, in.toString(),0, 3);					
+					ChemUtils.addText(grid, in.toString(),0, 3);					
 				}else{
-					addText(grid, "Input a valid response", 0, 3);
+					ChemUtils.addText(grid, "Input a valid response", 0, 3);
 				}
 				if(response.isEmpty()){
 					symbolInput(p);
@@ -229,9 +212,9 @@ public class Display extends Application {
 		grid.setHgap(10);
 		grid.setVgap(10);
 		
-		addText(grid, "Molar Mass", 0, 0);
+		ChemUtils.addText(grid, "Molar Mass", 0, 0);
 		
-		addText(grid, "Of what compound do you wish to find the molar mass?", 0, 1);
+		ChemUtils.addText(grid, "Of what compound do you wish to find the molar mass?", 0, 1);
 
 		TextField inp = new TextField();
 		grid.add(inp, 0, 2);
@@ -242,9 +225,9 @@ public class Display extends Application {
 				String response = inp.getText();
 				if(verify(4, response)){					
 					in1 = new Compound(response);
-					addText(grid, in1.toString(), 0, 3);
+					ChemUtils.addText(grid, in1.toString(), 0, 3);
 				}else{
-					addText(grid, "Input a valid response", 0, 3);
+					ChemUtils.addText(grid, "Input a valid response", 0, 3);
 				}
 				if(response.isEmpty()){
 					molarMassInput(p);
@@ -267,12 +250,6 @@ public class Display extends Application {
 		Scene in = new Scene(grid, 600, 400);
 		
 		p.setScene(in);
-	}
-	
-	public static void addText(GridPane grid, String text, int col, int row){
-		Text rules = new Text();
-		rules.setText(text);
-		grid.add(rules, col, row);
 	}
 	
 	public static Boolean verify(int type, String verification){
@@ -325,5 +302,4 @@ public class Display extends Application {
 		return false;
 	}
 		
-	
 }
