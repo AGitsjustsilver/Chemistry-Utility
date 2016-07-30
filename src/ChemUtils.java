@@ -6,8 +6,6 @@ import javafx.scene.text.Text;
 
 public class ChemUtils {
 	
-	public final static long RESET_TIME = 30000;
-	
 	public static void addText(GridPane grid, String text, int col, int row){
 		Text rules = new Text();
 		rules.setText(text);
