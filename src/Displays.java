@@ -16,7 +16,8 @@ import javafx.stage.Stage;
 public class Displays{
 	private static Elements in;
 	private static Compound in1;
-		
+	
+	//main display
 	public static void mainInput(Stage p){
 		GridPane grid = new GridPane();
 		grid.setAlignment(Pos.CENTER);
@@ -64,6 +65,7 @@ public class Displays{
 		p.setScene(firstChoice);
 	}
 
+	//input displays
 	public static void nameInput(Stage p){
 		GridPane grid = new GridPane();
 		grid.setAlignment(Pos.CENTER);
@@ -98,6 +100,8 @@ public class Displays{
 
 		});
 		grid.add(submit, 1, 2);
+		
+		ChemUtils.addHelpButton(grid, 1, 2, 2);
 
 		Button back = new Button("Go back");
 		back.setOnMousePressed(new EventHandler<Event>() {
@@ -146,6 +150,8 @@ public class Displays{
 		});
 		grid.add(submit, 1, 2);
 		
+		ChemUtils.addHelpButton(grid, 2, 2, 2);
+		
 		Button back = new Button("Go back");
 		back.setOnMousePressed(new EventHandler<Event>() {
 			public void handle(Event event){
@@ -192,6 +198,8 @@ public class Displays{
 			}
 		});
 		grid.add(submit, 1, 2);
+		
+		ChemUtils.addHelpButton(grid, 3, 2, 2);
 
 		Button back = new Button("Go back");
 		back.setOnMousePressed(new EventHandler<Event>() {
@@ -239,6 +247,8 @@ public class Displays{
 		});
 		grid.add(submit, 1, 2);
 		
+		ChemUtils.addHelpButton(grid, 4, 2, 2);
+		
 		Button back = new Button("Go back");
 		back.setOnMousePressed(new EventHandler<Event>() {
 			public void handle(Event event){
@@ -252,6 +262,56 @@ public class Displays{
 		p.setScene(in);
 	}
 	
+	//help displays
+	public static void helpName(Stage p){
+		GridPane grid = new GridPane();
+		grid.setAlignment(Pos.CENTER);
+		
+		ChemUtils.addText(grid, "This is name help", 0, 0);
+		
+		Scene s = new Scene(grid, 250, 250);
+		
+		p.setTitle("Help");
+		p.setScene(s);
+	}
+	
+	public static void helpNum(Stage p){
+		GridPane grid = new GridPane();
+		grid.setAlignment(Pos.CENTER);
+		
+		ChemUtils.addText(grid, "This is number help", 0, 0);
+		
+		Scene s = new Scene(grid, 250, 250);
+		
+		p.setTitle("Help");
+		p.setScene(s);
+	}
+	
+	public static void helpSym(Stage p){
+		GridPane grid = new GridPane();
+		grid.setAlignment(Pos.CENTER);
+		
+		ChemUtils.addText(grid, "This is symbol help", 0, 0);
+		
+		Scene s = new Scene(grid, 250, 250);
+		
+		p.setTitle("Help");
+		p.setScene(s);
+	}
+	
+	public static void helpMolarMass(Stage p){
+		GridPane grid = new GridPane();
+		grid.setAlignment(Pos.CENTER);
+		
+		ChemUtils.addText(grid, "This is molar mass help", 0, 0);
+		
+		Scene s = new Scene(grid, 250, 250);
+		
+		p.setTitle("Help");
+		p.setScene(s);
+	}
+	
+	//additional display methods
 	public static Boolean verify(int type, String verification){
 		if(type == 1){
 			//for names
@@ -301,5 +361,18 @@ public class Displays{
 		}
 		return false;
 	}
+	
+	public static void errorWindow(Stage s){
+		GridPane g = new GridPane();
+		g.setAlignment(Pos.CENTER);
 		
+		ChemUtils.addText(g, "you fucked up", 0, 0);
+		
+		Scene s1 = new Scene(g, 250, 250);
+		s.setTitle("ERROR. YOU DUMB PROGRAMMER.");
+		s.setScene(s1);
+		s.show();
+		
+	}
+	
 }
