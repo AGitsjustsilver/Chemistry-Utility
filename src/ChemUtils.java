@@ -72,6 +72,8 @@ public class ChemUtils {
 					Displays.helpSym(st);
 				}else if(type == 4){
 					Displays.helpMolarMass(st);
+				}else if(type == 5){
+					Displays.helpMolarMassGame(st);
 				}else{
 					Displays.errorWindow(st);
 				}

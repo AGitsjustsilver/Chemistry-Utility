@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
@@ -22,7 +23,19 @@ public class Compound extends Elements {
 		String[] result = StringUtils.splitByCharacterType(compound);
 		return result;
 	}
-
+	
+	public static String generateCompound(){
+		String finalized = "";
+		in = new Elements();
+		int numOfElements = (int)((Math.random() * 5) +1);
+		for(int i = 0; i < numOfElements; i++){
+			int numOfElement = (int)((Math.random() * 10) + 1);
+			String el =in.getElementSymbol(numOfElement);
+			finalized += el + numOfElement; 
+		}
+		return finalized;
+	}
+	
 	public ArrayList<String> getElements(){
 		ArrayList<String> result = new ArrayList<String>();
 		String[] split = StringUtils.splitByCharacterType(compound);
@@ -64,7 +77,11 @@ public class Compound extends Elements {
 			if((i != lenght-1)){
 				elemtn += elemetn + ", ";				
 			}else{
-				elemtn += "and " + elemetn + ".\n";
+				if(lenght == 1){
+					elemtn += elemetn + ".\n";
+				}else{
+					elemtn += "and " + elemetn + ".\n";
+				}
 			}
 			
 		}
@@ -78,7 +95,11 @@ public class Compound extends Elements {
 			if((k != lenght-1)){
 				indMass += elemetn + ", ";				
 			}else{
-				indMass += "and " + elemetn + ".\n";
+				if(lenght == 1){	
+					indMass += elemetn + ".\n";
+				}else{
+					indMass += "and " + elemetn + ".\n";
+				}
 			}
 		}
 		result += indMass;

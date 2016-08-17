@@ -2,6 +2,7 @@
  * @author: Alessandro Guaresti
  */
 import java.util.ArrayList;
+
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -94,6 +95,7 @@ public class Displays{
 					nameInput(p);
 				}else{
 					inp.setText("");
+					inp.setDisable(true);
 					submit.setText("Reset");
 				}
 			}
@@ -144,6 +146,7 @@ public class Displays{
 					numberInput(p);
 				}else{
 					inp.setText("");
+					inp.setDisable(true);
 					submit.setText("Reset");
 				}
 			}
@@ -193,6 +196,7 @@ public class Displays{
 					symbolInput(p);
 				}else{
 					inp.setText("");
+					inp.setDisable(true);
 					submit.setText("Reset");
 				}
 			}
@@ -241,6 +245,7 @@ public class Displays{
 					molarMassInput(p);
 				}else{
 					inp.setText("");
+					inp.setDisable(true);
 					submit.setText("Reset");
 				}
 			}
@@ -260,6 +265,51 @@ public class Displays{
 		Scene in = new Scene(grid, 600, 400);
 		
 		p.setScene(in);
+	}
+
+	//review displays
+	public static void molarMassGame(Stage p){
+		GridPane grid = new GridPane();
+		grid.setAlignment(Pos.CENTER);
+		grid.setHgap(10);
+		grid.setVgap(10);
+		
+		ChemUtils.addText(grid, "Guess the Molar Mass", 0, 0);
+		
+		String genComp = Compound.generateCompound();
+		ChemUtils.addText(grid, "The compound is: \t\t" + genComp, 0, 1);
+		
+		ChemUtils.addText(grid, "What is the molar mass?", 0, 2);
+		
+		TextField inp = new TextField();
+		grid.add(inp, 0, 3);
+
+		//finish it
+		Button submit = new Button("Submit");
+		submit.setOnMousePressed(new EventHandler<Event>(){
+			public void handle(Event event){
+				String input = inp.getText();
+				if(verify(5, input)){
+					ChemUtils.addText(grid, "Correct", 0, 4);
+				}else{
+					ChemUtils.addText(grid, "Incorrect. the correct answer is: " + in1.getMolarMass(new Compound(genComp)) , 0, 4);
+				}
+				if(input.isEmpty()){
+					molarMassGame(p);
+				}else{
+					inp.setText("");
+					inp.setDisable(true);
+					submit.setText("Reset");
+				}
+			}
+		});
+		grid.add(submit, 1, 3);
+		
+		ChemUtils.addHelpButton(grid, 5, 2, 3);
+		
+		Scene s = new Scene(grid, 600, 400);
+		
+		p.setScene(s);
 	}
 	
 	//help displays
@@ -304,6 +354,18 @@ public class Displays{
 		grid.setAlignment(Pos.CENTER);
 		
 		ChemUtils.addText(grid, "This is molar mass help", 0, 0);
+		
+		Scene s = new Scene(grid, 250, 250);
+		
+		p.setTitle("Help");
+		p.setScene(s);
+	}
+	
+	public static void helpMolarMassGame(Stage p){
+		GridPane grid = new GridPane();
+		grid.setAlignment(Pos.CENTER);
+		
+		ChemUtils.addText(grid, "You are given a randomly generated compound. \n it is up to you to figure out the molar mass", 0, 0);
 		
 		Scene s = new Scene(grid, 250, 250);
 		
@@ -358,6 +420,14 @@ public class Displays{
 				}
 			}
 			return res;
+		}else if(type == 5){
+			//for the game
+			double input = new Double(verification);
+			if(input == in1.getMolarMass(new Compound(verification))){
+				return true;
+			}else{
+				return false;
+			}
 		}
 		return false;
 	}
