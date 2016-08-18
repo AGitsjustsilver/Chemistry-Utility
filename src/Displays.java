@@ -289,18 +289,24 @@ public class Displays{
 		submit.setOnMousePressed(new EventHandler<Event>(){
 			public void handle(Event event){
 				String input = inp.getText();
-				if(verify(5, input)){
-					ChemUtils.addText(grid, "Correct", 0, 4);
-				}else{
-					ChemUtils.addText(grid, "Incorrect. the correct answer is: " + in1.getMolarMass(new Compound(genComp)) , 0, 4);
-				}
 				if(input.isEmpty()){
-					molarMassGame(p);
+					ChemUtils.addText(grid, "Input an answer", 0, 4);
+					
 				}else{
-					inp.setText("");
-					inp.setDisable(true);
-					submit.setText("Reset");
+					if(verify(5, input)){
+						ChemUtils.addText(grid, "Correct", 0, 4);
+					}else{
+						ChemUtils.addText(grid, "Incorrect. the correct answer is: " + in1.getMolarMass(new Compound(genComp)) , 0, 4);
+					}
+					if(input.isEmpty()){
+						molarMassGame(p);
+					}else{
+						inp.setText("");
+						inp.setDisable(true);
+						submit.setText("Reset");
+					}
 				}
+
 			}
 		});
 		grid.add(submit, 1, 3);
@@ -367,7 +373,7 @@ public class Displays{
 		
 		ChemUtils.addText(grid, "You are given a randomly generated compound. \n it is up to you to figure out the molar mass", 0, 0);
 		
-		Scene s = new Scene(grid, 250, 250);
+		Scene s = new Scene(grid, 275, 275);
 		
 		p.setTitle("Help");
 		p.setScene(s);
@@ -422,7 +428,7 @@ public class Displays{
 			return res;
 		}else if(type == 5){
 			//for the game
-			double input = new Double(verification);
+			Double input = new Double(verification);
 			if(input == in1.getMolarMass(new Compound(verification))){
 				return true;
 			}else{
