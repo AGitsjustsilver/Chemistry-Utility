@@ -1,31 +1,135 @@
-"Hydrogen"
-, "Helium"
-, "Lithium"
-, "Beryllium"
-, "Boron"
-, "Carbon"
-, "Nitrogen"
-, "Oxygen"
-, "Fluorine"
-, "Neon",
-"Sodium",
-"Magnesium",
-"Aluminium",
-"Silicon",
-"Phosphorus",
-"Sulfur",
-"Chlorine",
-"Argon",
-"Potassium",
-"Calcium",
-"Scandium",
-"Titanium",
-"Vanadium",
-"Chromium",
-"Manganese",
-"Iron",
-"Cobalt",
-"Nickle",
-"Copper",
-"Zinc",
-"Gallium", "Germanium", "Arsenic", "Selenium", "Bromine", "Krypton", "Rubidium", "Strontium", "Yttrium", "Zirconium", "Niobium", "Molybdenum", "Technetium", "Ruthenium", "Rhodium", "Palladium", "Silver", "Cadmium", "Indium", "Tin", "Antimony", "Tellurium", "Iodine", "Xenon", "Caesium", "Barium", "Lanthanum", "Cerium", "Praseodymium", "Neodymium", "Promethium", "Samarium", "Europium", "Gadolinium", "Terbium", "Dysprosium", "Holmium", "Erbium", "Thulium", "Ytterbium", "Lutetium", "Hafnium", "Tantalum", "Tungsten", "Rhenium", "Osmium", "Iridium", "Platinum", "Gold", "Mercury", "Thallium", "Lead", "Bismusth", "Polomium", "Astatine", "Radon", "Francium", "Randium", "Actinium", "Thorium", "Protactinium", "Uranium", "Neptunium", "Plutonium", "Americum", "Curium", "Berkelium", "Californium", "Einsteinium", "Fermium", "Mendeledvium", "Nobelium", "Lawrencium", "Rutherfordium", "Dubnium", "Seaborgium", "Bohrium", "Hassium", "Meitnerium", "Darmstandtium", "Roentgenium", "Copernicium", "Nihonium", "Fleovium", "Moscovium", "Livermorium", "Tennessine", "Oganesson"
+row 0
+"Hydrogen" 0,0
+, "Helium" 0, 17
+
+row 1
+, "Lithium" 1, 0
+, "Beryllium" 1, 1
+, "Boron" 1, 12
+, "Carbon" 1, 13
+, "Nitrogen" 1, 14
+, "Oxygen" 1, 15
+, "Fluorine" 1, 16
+, "Neon", 1, 17
+
+row 2
+"Sodium", 2, 0
+"Magnesium", 2, 1
+"Aluminium", 2, 12
+"Silicon", 2, 13
+"Phosphorus", 2, 14
+"Sulfur", 2, 15
+"Chlorine", 2, 16
+"Argon", 2, 17
+
+row 3
+"Potassium", 3, 0
+"Calcium", 3, 1
+"Scandium", 3, 2
+"Titanium", 3, 3
+"Vanadium", 3, 4
+"Chromium", 3, 5
+"Manganese", 3, 6
+"Iron", 3, 7
+"Cobalt", 3, 8 
+"Nickle", 3, 9
+"Copper", 3, 10
+"Zinc", 3, 11
+"Gallium", 3, 12
+"Germanium", 3, 13
+"Arsenic", 3, 14
+"Selenium", 3, 15
+"Bromine", 3, 16
+"Krypton", 3, 17
+
+row 4
+"Rubidium", 4, 0
+"Strontium", 4, 1
+"Yttrium", 4, 2
+"Zirconium", 4,3 
+"Niobium", 4, 4
+"Molybdenum", 4,5 
+"Technetium", 4, 6
+"Ruthenium", 4, 7
+"Rhodium", 4, 8
+"Palladium", 4,9 
+"Silver", 4, 10
+"Cadmium", 4, 11
+"Indium", 4, 12
+"Tin", 4, 13
+"Antimony", 4,14 
+"Tellurium", 4, 15
+"Iodine", 4, 16
+"Xenon", 4, 17
+
+row 5
+"Caesium", 5, 0
+"Barium", 5, 1
+"Hafnium", 5, 3
+"Tantalum", 5, 4
+"Tungsten", 5, 5
+"Rhenium", 5, 6
+"Osmium", 5, 7
+"Iridium", 5, 8
+"Platinum", 5, 9
+"Gold", 5, 10
+"Mercury", 5, 11
+"Thallium", 5, 12
+"Lead", 5, 13
+"Bismusth", 5, 14
+"Polomium", 5, 15
+"Astatine", 5, 16
+"Radon", 5, 17
+
+row 6
+"Francium", 6, 0 
+"Randium", 6, 1
+"Rutherfordium", 6,3 
+"Dubnium", 6, 4
+"Seaborgium", 6, 5
+"Bohrium", 6, 6
+"Hassium", 6, 7
+"Meitnerium", 6, 8
+"Darmstandtium",  6, 9
+"Roentgenium", 6, 10
+"Copernicium", 6, 11
+"Nihonium", 6, 12
+"Fleovium", 6, 13
+"Moscovium", 6, 14
+"Livermorium", 6, 15
+"Tennessine", 6, 16
+"Oganesson" 6, 17
+
+row 8
+"Lanthanum", 8, 3
+"Cerium", 8, 4
+"Praseodymium", 8,5 
+"Neodymium", 8, 6
+"Promethium", 8, 7
+"Samarium", 8, 8
+"Europium", 8, 9
+"Gadolinium", 8, 10
+"Terbium", 8, 11
+"Dysprosium" 8, 12
+"Holmium", 8, 13
+"Erbium", 8, 14
+"Thulium", 8, 15
+"Ytterbium", 8, 16
+"Lutetium", 8, 17
+
+row 9
+"Actinium", 9, 3
+"Thorium", 9, 4
+"Protactinium", 9,5 
+"Uranium", 9, 6
+"Neptunium", 9, 7
+"Plutonium", 9, 8
+"Americum", 9, 9
+"Curium", 9, 10
+"Berkelium", 9, 11 
+"Californium", 9, 12
+"Einsteinium", 9, 13
+"Fermium", 9, 14
+"Mendeledvium", 9,15 
+"Nobelium", 9, 16
+"Lawrencium", 9, 17
