@@ -92,9 +92,54 @@ public class TestEnviroment extends Application{
 		root.add(createEl(new Elements(69)), 8, 15);
 		root.add(createEl(new Elements(70)), 8, 16);
 		root.add(createEl(new Elements(71)), 8, 17);
-			 
-			 
-		
+		root.add(createEl(new Elements(72)), 5, 3);
+		root.add(createEl(new Elements(73)), 5, 4);
+		root.add(createEl(new Elements(74)), 5, 5);
+		root.add(createEl(new Elements(75)), 5, 6);
+		root.add(createEl(new Elements(76)), 5, 7);
+		root.add(createEl(new Elements(77)), 5, 8);
+		root.add(createEl(new Elements(78)), 5, 9);
+		root.add(createEl(new Elements(79)), 5, 10);
+		root.add(createEl(new Elements(80)), 5, 11);
+		root.add(createEl(new Elements(81)), 5, 12);
+		root.add(createEl(new Elements(82)), 5, 13);
+		root.add(createEl(new Elements(83)), 5, 14);
+		root.add(createEl(new Elements(84)), 5, 15);
+		root.add(createEl(new Elements(85)), 5, 16);
+		root.add(createEl(new Elements(86)), 5, 17);
+		root.add(createEl(new Elements(87)), 6, 0);
+		root.add(createEl(new Elements(88)), 6, 1);
+		root.add(createEl(new Elements(89)), 9, 3);
+		root.add(createEl(new Elements(90)), 9, 4);
+		root.add(createEl(new Elements(91)), 9, 5);
+		root.add(createEl(new Elements(92)), 9, 6);
+		root.add(createEl(new Elements(93)), 9, 7);
+		root.add(createEl(new Elements(94)), 9, 8);
+		root.add(createEl(new Elements(95)), 9, 9);
+		root.add(createEl(new Elements(96)), 9, 10);
+		root.add(createEl(new Elements(97)), 9, 11);
+		root.add(createEl(new Elements(98)), 9, 12);
+		root.add(createEl(new Elements(99)), 9, 13);
+		root.add(createEl(new Elements(100)), 9, 14);
+		root.add(createEl(new Elements(101)), 9, 15);
+		root.add(createEl(new Elements(102)), 9, 16);
+		root.add(createEl(new Elements(103)), 9, 17);
+		root.add(createEl(new Elements(104)), 6, 3);
+		root.add(createEl(new Elements(105)), 6, 4);
+		root.add(createEl(new Elements(106)), 6, 5);
+		root.add(createEl(new Elements(107)), 6, 6);
+		root.add(createEl(new Elements(108)), 6, 7);
+		root.add(createEl(new Elements(109)), 6, 8);
+		root.add(createEl(new Elements(110)), 6, 9);
+		root.add(createEl(new Elements(111)), 6, 10);
+		root.add(createEl(new Elements(112)), 6, 11);
+		root.add(createEl(new Elements(113)), 6, 12);
+		root.add(createEl(new Elements(114)), 6, 13);
+		root.add(createEl(new Elements(115)), 6, 14);
+		root.add(createEl(new Elements(116)), 6, 15);
+		root.add(createEl(new Elements(117)), 6, 16);
+		root.add(createEl(new Elements(118)), 6, 17);
+			 			 		
 		return root;
 	}
 	
