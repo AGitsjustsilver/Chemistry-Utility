@@ -11,9 +11,6 @@ public class TestEnviroment extends Application{
 	}
 	
 	public void start(Stage primaryStage){
-		
-		
-		
 		Scene s = new Scene(createTable(), 500, 500);
 		primaryStage.setScene(s);
 		primaryStage.setTitle("test");
@@ -25,6 +22,12 @@ public class TestEnviroment extends Application{
 		root.setAlignment(Pos.CENTER);
 		root.setGridLinesVisible(true);
 		root.add(createEl(new Elements(1)), 0, 0);
+		root.add(createEl(new Elemetns(2)), 0, 17);
+		root.add(createEl(new Elements(3)), 1, 0);
+		root.add(createEl(new Elements(4)), 1, 1);
+		root.add(createEL(new Elements(5)), 1, 12);
+			 
+			 
 		
 		return root;
 	}
