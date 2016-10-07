@@ -138,6 +138,13 @@ public class Elements{
 				+ "The Atomic Mass of: " + getAtomicMass(find) + " amu.";
 	}
 	
+	public String basicString(){
+		return getAtomicNumber(find) + "\n"
+				+ getElementSymbol(find) + "\n"
+				+ getElementName(find) + "\n" 
+				+ getAtomicMass(find);
+	}
+	
 
 	
 }
