@@ -8,12 +8,8 @@ public class Main extends Application{
 	}
 	
 	public void start(Stage primaryStage){
-//		Displays.mainInput(primaryStage);
-//		Displays.nameInput(primaryStage);
-//		Displays.numberInput(primaryStage);
-//		Displays.symbolInput(primaryStage);
-//		Displays.molarMassInput(primaryStage);
-		Displays.molarMassGame(primaryStage);
+		
+		Displays.mainDisplay(primaryStage);
 		
 		primaryStage.setTitle("Chemistry-Utility");
 		primaryStage.show();
