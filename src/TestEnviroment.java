@@ -11,7 +11,7 @@ public class TestEnviroment extends Application{
 	}
 	
 	public void start(Stage primaryStage){
-		Scene s = new Scene(createTable(), 1080, 1080);
+		Scene s = new Scene(createTable(), 1280, 800);
 		primaryStage.setScene(s);
 		primaryStage.setTitle("test");
 		primaryStage.show();
