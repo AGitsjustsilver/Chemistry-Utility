@@ -7,6 +7,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 public class ChemUtils {
@@ -54,6 +55,12 @@ public class ChemUtils {
 		grid.add(rules, col, row);
 	}
 	
+	public static void addText(GridPane grid, String text, int col, int row, TextAlignment position){
+		Text rules = new Text();
+		rules.setTextAlignment(position);
+		rules.setText(text);
+		grid.add(rules, col, row);
+	}
 	
 	public static void setBackColor(GridPane grid, String colorHexVal){
 		grid.setBackground(new Background(new BackgroundFill(Paint.valueOf(colorHexVal), null, null)));
