@@ -1,4 +1,5 @@
 import javafx.application.Application;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class Main extends Application{
@@ -12,6 +13,7 @@ public class Main extends Application{
 		Displays.mainDisplay(primaryStage);
 		
 		primaryStage.setTitle("Chemistry-Utility");
+		primaryStage.getIcons().add(new Image("resources/Icon.png"));
 		primaryStage.show();
 	}
 	
