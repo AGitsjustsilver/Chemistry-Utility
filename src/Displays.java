@@ -269,7 +269,7 @@ public class Displays{
 				String response = inp.getText();
 				if(verify(4, response)){					
 					in1 = new Compound(response);
-					t.setText(in.toString());
+					t.setText(in1.toString());
 				}else{
 					t.setText("Input a valid response");
 					inp.setText("");
