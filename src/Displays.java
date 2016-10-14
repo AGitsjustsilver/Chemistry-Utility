@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToolBar;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
@@ -474,60 +475,91 @@ public class Displays{
 	public static void helpName(Stage p){
 		GridPane grid = new GridPane();
 		grid.setAlignment(Pos.CENTER);
+		grid.setVgap(10);
 		
-		ChemUtils.addText(grid, "This is name help", 0, 0);
+		ChemUtils.addText(grid, "Insert a name of an element to get it's information \n"
+				+ "ex. \n \t\tHydrogen \n" + new Elements("Hydrogen").toString(), 0, 0);
 		
-		Scene s = new Scene(grid, 250, 250);
+		ChemUtils.addText(grid, "Make sure you spelled the element correctly", 0, 1);
+		
+		ChemUtils.addText(grid, "Capitilization does not matter", 0, 2);
+		
+		Scene s = new Scene(grid, 300, 300);
 		
 		p.setTitle("Help");
+		p.getIcons().add(new Image("resources/Icon.png"));
+		p.setResizable(false);
 		p.setScene(s);
 	}
 	
 	public static void helpNum(Stage p){
 		GridPane grid = new GridPane();
 		grid.setAlignment(Pos.CENTER);
+		grid.setVgap(10);
 		
-		ChemUtils.addText(grid, "This is number help", 0, 0);
+		ChemUtils.addText(grid, "Insert the atomic number of an element to get it's information\n"
+				+ "ex. \n\t\t\t 5 \n" + new Elements(5).toString(), 0, 0);
 		
-		Scene s = new Scene(grid, 250, 250);
+		ChemUtils.addText(grid, "Remember Elements 0 and 119 do not exist", 0, 1);
+		
+		Scene s = new Scene(grid, 350, 350);
 		
 		p.setTitle("Help");
+		p.getIcons().add(new Image("resources/Icon.png"));
+		p.setResizable(false);
 		p.setScene(s);
 	}
 	
 	public static void helpSym(Stage p){
 		GridPane grid = new GridPane();
 		grid.setAlignment(Pos.CENTER);
+		grid.setVgap(10);
 		
-		ChemUtils.addText(grid, "This is symbol help", 0, 0);
+		ChemUtils.addText(grid, "Insert the element's Symbol to get it's information \n"
+				+ "ex. \n\t\t\t Si\n" + new Elements("Si").toString(), 0, 0);
 		
-		Scene s = new Scene(grid, 250, 250);
+		ChemUtils.addText(grid, "Capitalization does not matter", 0, 1);
+		
+		Scene s = new Scene(grid, 300, 300);
 		
 		p.setTitle("Help");
+		p.getIcons().add(new Image("resources/Icon.png"));
+		p.setResizable(false);
 		p.setScene(s);
 	}
 	
 	public static void helpMolarMass(Stage p){
 		GridPane grid = new GridPane();
 		grid.setAlignment(Pos.CENTER);
+		grid.setVgap(10);
 		
-		ChemUtils.addText(grid, "This is molar mass help", 0, 0);
+		ChemUtils.addText(grid, "Insert compounds to get the information that they contain \n"
+				+ "ex \n\t\t h2o2 \n" + new Compound("h2o2").toString(), 0, 0);
 		
-		Scene s = new Scene(grid, 250, 250);
+		ChemUtils.addText(grid, "make sure any single elements are followed by a 1 \n ex.\n h2o1", 0, 1);
+		
+		ChemUtils.addText(grid, "Capitalization does not matter", 0, 2);
+		
+		Scene s = new Scene(grid, 400, 400);
 		
 		p.setTitle("Help");
+		p.getIcons().add(new Image("resources/Icon.png"));
+		p.setResizable(false);
 		p.setScene(s);
 	}
 	
 	public static void helpMolarMassGame(Stage p){
 		GridPane grid = new GridPane();
 		grid.setAlignment(Pos.CENTER);
+		grid.setVgap(10);
 		
 		ChemUtils.addText(grid, "You are given a randomly generated compound. \n it is up to you to figure out the molar mass", 0, 0);
 		
 		Scene s = new Scene(grid, 275, 275);
 		
 		p.setTitle("Help");
+		p.getIcons().add(new Image("resources/Icon.png"));
+		p.setResizable(false);
 		p.setScene(s);
 	}
 	

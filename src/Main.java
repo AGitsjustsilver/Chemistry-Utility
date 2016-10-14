@@ -14,6 +14,7 @@ public class Main extends Application{
 		
 		primaryStage.setTitle("Chemistry-Utility");
 		primaryStage.getIcons().add(new Image("resources/Icon.png"));
+		primaryStage.setResizable(false);
 		primaryStage.show();
 	}
 	
