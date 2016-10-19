@@ -11,10 +11,10 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.control.ToolBar;
-import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
@@ -35,6 +35,8 @@ public class Displays{
 			@Override
 			public void handle(ActionEvent event) {
 				whole.setCenter(home());
+				whole.setLeft(null);
+				whole.setRight(null);
 			}
 		});
 		Button pTable = new Button("Periodic Table");
@@ -44,44 +46,66 @@ public class Displays{
 			public void handle(ActionEvent event) {
 				// TODO Auto-generated method stub
 				whole.setCenter(perodicTable());
+				whole.setLeft(null);
+				whole.setRight(null);
 			}
 		});
-		Button name = new Button("Name Input");
-		name.setOnAction(new EventHandler<ActionEvent>() {
+		
+		//input
+		Button input = new Button("Inputs");
+			Button name = new Button("Name Input");
+			name.setOnAction(new EventHandler<ActionEvent>() {
+				
+				@Override
+				public void handle(ActionEvent event) {
+					// TODO Auto-generated method stub
+					whole.setCenter(nameInput());
+					whole.setRight(helpName());
+				}
+			});
+			Button num = new Button("atomic num Input");
+			num.setOnAction(new EventHandler<ActionEvent>() {
+				
+				@Override
+				public void handle(ActionEvent event) {
+					// TODO Auto-generated method stub
+					whole.setCenter(numberInput());
+					whole.setRight(helpNum());
+				}
+			});
+			Button symbol = new Button("Symbol input");
+			symbol.setOnAction(new EventHandler<ActionEvent>() {
+				
+				@Override
+				public void handle(ActionEvent event) {
+					// TODO Auto-generated method stub
+					whole.setCenter(symbolInput());
+					whole.setRight(helpSym());
+				}
+			});
+			Button molarMass = new Button("molar mass Input");
+			molarMass.setOnAction(new EventHandler<ActionEvent>() {
+				
+				@Override
+				public void handle(ActionEvent event) {
+					// TODO Auto-generated method stub
+					whole.setCenter(molarMassInput());
+					whole.setRight(helpMolarMass());
+				}
+			});
+			FlowPane inp = new FlowPane(name, num, symbol, molarMass);
+			inp.setPadding(new Insets(10, 20, 0, 0));
+			inp.setMaxWidth(25);
+		input.setOnAction(new EventHandler<ActionEvent>() {
 			
 			@Override
 			public void handle(ActionEvent event) {
 				// TODO Auto-generated method stub
-				whole.setCenter(nameInput());
+				whole.setLeft(inp);				
 			}
 		});
-		Button num = new Button("atomic num Input");
-		num.setOnAction(new EventHandler<ActionEvent>() {
 			
-			@Override
-			public void handle(ActionEvent event) {
-				// TODO Auto-generated method stub
-				whole.setCenter(numberInput());
-			}
-		});
-		Button symbol = new Button("Symbol input");
-		symbol.setOnAction(new EventHandler<ActionEvent>() {
-			
-			@Override
-			public void handle(ActionEvent event) {
-				// TODO Auto-generated method stub
-				whole.setCenter(symbolInput());
-			}
-		});
-		Button molarMass = new Button("molar mass Input");
-		molarMass.setOnAction(new EventHandler<ActionEvent>() {
-			
-			@Override
-			public void handle(ActionEvent event) {
-				// TODO Auto-generated method stub
-				whole.setCenter(molarMassInput());
-			}
-		});
+		//review
 		Button molarMassGame = new Button("molar mass game");
 		molarMassGame.setOnAction(new EventHandler<ActionEvent>() {
 			
@@ -89,10 +113,13 @@ public class Displays{
 			public void handle(ActionEvent event) {
 				// TODO Auto-generated method stub
 				whole.setCenter(molarMassGame());
+				whole.setLeft(null);
+				whole.setRight(helpMolarMassGame());
 			}
 		});
 		
-		ToolBar b = new ToolBar(home, pTable, name, num, symbol, molarMass, molarMassGame);
+		HBox b = new HBox( 50 , home, pTable, input, molarMassGame);
+		b.setAlignment(Pos.CENTER);
 		whole.setTop(b);
 		
 		whole.setCenter(home());
@@ -156,7 +183,7 @@ public class Displays{
 		});
 		grid.add(submit, 1, 2);
 		
-		ChemUtils.addHelpButton(grid, 1, 1, 3);
+//		ChemUtils.addHelpButton(grid, 1, 1, 3);
 
 		
 		return grid;
@@ -200,7 +227,7 @@ public class Displays{
 		});
 		grid.add(submit, 1, 2);
 		
-		ChemUtils.addHelpButton(grid, 2, 1, 3);
+//		ChemUtils.addHelpButton(grid, 2, 1, 3);
 		
 		return grid;
 	}
@@ -243,7 +270,7 @@ public class Displays{
 		});
 		grid.add(submit, 1, 2);
 		
-		ChemUtils.addHelpButton(grid, 3, 2, 2);
+//		ChemUtils.addHelpButton(grid, 3, 2, 2);
 		
 		return grid;
 	}
@@ -286,7 +313,7 @@ public class Displays{
 		});
 		grid.add(submit, 1, 2);
 		
-		ChemUtils.addHelpButton(grid, 4, 2, 2);
+//		ChemUtils.addHelpButton(grid, 4, 2, 2);
 		
 		return grid;
 	}
@@ -466,13 +493,13 @@ public class Displays{
 		});
 		grid.add(submit, 1, 3);
 		
-		ChemUtils.addHelpButton(grid, 5, 2, 3);
+//		ChemUtils.addHelpButton(grid, 5, 2, 3);
 		
 		return grid;
 	}
 	
 	//help displays
-	public static void helpName(Stage p){
+	public static GridPane helpName(){
 		GridPane grid = new GridPane();
 		grid.setAlignment(Pos.CENTER);
 		grid.setVgap(10);
@@ -484,15 +511,11 @@ public class Displays{
 		
 		ChemUtils.addText(grid, "Capitilization does not matter", 0, 2);
 		
-		Scene s = new Scene(grid, 300, 300);
-		
-		p.setTitle("Help");
-		p.getIcons().add(new Image("resources/Icon.png"));
-		p.setResizable(false);
-		p.setScene(s);
+		return grid;
+
 	}
 	
-	public static void helpNum(Stage p){
+	public static GridPane helpNum(){
 		GridPane grid = new GridPane();
 		grid.setAlignment(Pos.CENTER);
 		grid.setVgap(10);
@@ -502,15 +525,10 @@ public class Displays{
 		
 		ChemUtils.addText(grid, "Remember Elements 0 and 119 do not exist", 0, 1);
 		
-		Scene s = new Scene(grid, 350, 350);
-		
-		p.setTitle("Help");
-		p.getIcons().add(new Image("resources/Icon.png"));
-		p.setResizable(false);
-		p.setScene(s);
+		return grid;
 	}
 	
-	public static void helpSym(Stage p){
+	public static GridPane helpSym(){
 		GridPane grid = new GridPane();
 		grid.setAlignment(Pos.CENTER);
 		grid.setVgap(10);
@@ -520,15 +538,10 @@ public class Displays{
 		
 		ChemUtils.addText(grid, "Capitalization does not matter", 0, 1);
 		
-		Scene s = new Scene(grid, 300, 300);
-		
-		p.setTitle("Help");
-		p.getIcons().add(new Image("resources/Icon.png"));
-		p.setResizable(false);
-		p.setScene(s);
+		return grid;
 	}
 	
-	public static void helpMolarMass(Stage p){
+	public static GridPane helpMolarMass(){
 		GridPane grid = new GridPane();
 		grid.setAlignment(Pos.CENTER);
 		grid.setVgap(10);
@@ -540,27 +553,17 @@ public class Displays{
 		
 		ChemUtils.addText(grid, "Capitalization does not matter", 0, 2);
 		
-		Scene s = new Scene(grid, 400, 400);
-		
-		p.setTitle("Help");
-		p.getIcons().add(new Image("resources/Icon.png"));
-		p.setResizable(false);
-		p.setScene(s);
+		return grid;
 	}
 	
-	public static void helpMolarMassGame(Stage p){
+	public static GridPane helpMolarMassGame(){
 		GridPane grid = new GridPane();
 		grid.setAlignment(Pos.CENTER);
 		grid.setVgap(10);
 		
 		ChemUtils.addText(grid, "You are given a randomly generated compound. \n it is up to you to figure out the molar mass", 0, 0);
 		
-		Scene s = new Scene(grid, 275, 275);
-		
-		p.setTitle("Help");
-		p.getIcons().add(new Image("resources/Icon.png"));
-		p.setResizable(false);
-		p.setScene(s);
+		return grid;
 	}
 	
 	//additional display methods
@@ -622,16 +625,13 @@ public class Displays{
 		return false;
 	}
 	
-	public static void errorWindow(Stage s){
+	public static GridPane errorWindow(){
 		GridPane g = new GridPane();
 		g.setAlignment(Pos.CENTER);
 		
-		ChemUtils.addText(g, "you fucked up", 0, 0);
-		
-		Scene s1 = new Scene(g, 250, 250);
-		s.setTitle("ERROR. YOU DUMB PROGRAMMER.");
-		s.setScene(s1);
-		s.show();
+		ChemUtils.addText(g, "you done messed up", 0, 0);
+
+		return g;
 		
 	}
 
