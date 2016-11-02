@@ -24,6 +24,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+import ag.com.Displays.IonDisplay;
 
 public class Displays{
 	private static Elements in;
@@ -110,7 +111,7 @@ public class Displays{
 			}
 		});
 			
-		//review
+//		review
 		Button molarMassGame = new Button("molar mass game");
 		molarMassGame.setOnAction(new EventHandler<ActionEvent>() {
 			
@@ -123,7 +124,31 @@ public class Displays{
 			}
 		});
 		
-		HBox b = new HBox( 50 , home, pTable, input, molarMassGame);
+//		ions
+		Button ions = new Button("Ions");
+			Button charge = new Button("Ion Charges");
+			charge.setOnAction(new EventHandler<ActionEvent>() {
+				
+				@Override
+				public void handle(ActionEvent event) {
+					// TODO Auto-generated method stub
+					whole.setCenter(IonDisplay.ionCharges());
+					whole.setRight(null);
+				}
+			});
+			FlowPane drp = new FlowPane(charge);
+			drp.setPadding(new Insets(10, 20, 0, 0));
+			drp.setMaxWidth(25);
+		ions.setOnAction(new EventHandler<ActionEvent>() {
+			
+			@Override
+			public void handle(ActionEvent event) {
+				// TODO Auto-generated method stub
+				whole.setLeft(drp);
+			}
+		});
+		
+		HBox b = new HBox( 50 , home, pTable, input, molarMassGame, ions);
 		b.setAlignment(Pos.CENTER);
 		whole.setTop(b);
 		
