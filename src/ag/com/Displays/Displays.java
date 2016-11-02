@@ -1,8 +1,13 @@
+package ag.com.Displays;
 /*
  * @author: Alessandro Guaresti
  */
 import java.util.ArrayList;
 
+import ag.com.Displays.Displays.*;
+import ag.com.main.ChemUtils;
+import ag.com.main.Compound;
+import ag.com.main.Elements;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -497,6 +502,8 @@ public class Displays{
 		
 		return grid;
 	}
+	
+	
 	
 	//help displays
 	public static GridPane helpName(){
