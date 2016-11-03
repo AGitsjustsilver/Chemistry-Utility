@@ -126,7 +126,7 @@ public class Elements{
 	public double getAtomicMass(int find){
 		return atomicMass[find];
 	}
-	
+		
 	/**
 	 * Method that return the information of and element
 	 * @return Elements info
