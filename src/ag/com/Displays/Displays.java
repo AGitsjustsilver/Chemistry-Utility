@@ -117,18 +117,29 @@ public class Displays{
 		
 //		ions
 		Button ions = new Button("Ions");
+			Text info = new Text("Information");
 			Button charge = new Button("Ion Charges");
 			charge.setOnAction(new EventHandler<ActionEvent>() {
 				
 				@Override
 				public void handle(ActionEvent event) {
 					// TODO Auto-generated method stub
-					whole.setCenter(IonDisplay.display());
+					whole.setCenter(IonDisplay.displayMono());
 					whole.setRight(null);
 				}
 			});
-			FlowPane drp = new FlowPane(charge);
-			drp.setPadding(new Insets(10, 20, 0, 0));
+			Button poly = new Button("Polyatomic Ions");
+			poly.setOnAction(new EventHandler<ActionEvent>() {
+				
+				@Override
+				public void handle(ActionEvent event) {
+					// TODO Auto-generated method stub
+					whole.setCenter(IonDisplay.displayPoly());
+					whole.setRight(null);
+				}
+			});
+			FlowPane drp = new FlowPane(info, charge, poly);
+			drp.setPadding(new Insets(10, 20, 2, 0));
 			drp.setMaxWidth(25);
 		ions.setOnAction(new EventHandler<ActionEvent>() {
 			
