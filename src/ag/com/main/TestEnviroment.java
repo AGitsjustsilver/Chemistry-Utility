@@ -1,5 +1,8 @@
 package ag.com.main;
-import javafx.application.Application;
+import java.util.Scanner;
+import org.apache.commons.lang3.text.StrMatcher;
+import ag.com.main.Compound;
+//import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -12,10 +15,50 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
-public class TestEnviroment extends Application{
+
+
+public class TestEnviroment /**extends Application**/{
+	
+	private static String[] special = {"!","@","#", "$", "%","^","&","*","(",")","-",","};
 	
 	public static void main(String[] args){
-		launch(args);
+		
+		
+		Scanner in = new Scanner(System.in);
+		System.out.println("type somthing");
+		String str = in.nextLine();
+
+		
+		if(con(str)){
+			System.out.println("No special charachters");
+		}else{
+			System.out.println("You may pass");
+		}
+		
+		in.close();
+//		launch(args);
+	}
+	
+	public static Boolean con(String str){
+		String[] split = getInd(str);
+		Boolean result = true;
+		for(int i = 0; i < special.length; i++){
+			Integer unUsable = new Integer(special[i].hashCode());
+			for(int k = 0; k < split.length; i++){				
+				if(split[k].hashCode() == unUsable){
+					result = false;
+					break;
+				}else{
+					continue;
+				}
+			}
+		}
+		return result;
+	}
+
+	public static String[] getInd(String st){
+		String[] result = new Compound(st).getInd();
+		return result;
 	}
 	
 	public void start(Stage p){
@@ -60,7 +103,6 @@ public class TestEnviroment extends Application{
 		p.setResizable(false);
 		p.show();
 	}
-	
 	
 
 	

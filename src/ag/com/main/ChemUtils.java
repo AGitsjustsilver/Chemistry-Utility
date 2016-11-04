@@ -8,7 +8,7 @@ import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
-
+import org.apache.commons.lang3.text.*;
 public class ChemUtils {
 	
 	private static Elements in;
@@ -116,6 +116,7 @@ public class ChemUtils {
 			return res;
 		}else if(type == 5){
 			//for the game
+			
 			Double input = new Double(verification);
 			if(input == in1.getMolarMass(new Compound(verification))){
 				return true;
