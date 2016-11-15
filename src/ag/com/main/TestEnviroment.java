@@ -1,7 +1,12 @@
 package ag.com.main;
-import java.util.Scanner;
-import org.apache.commons.lang3.text.StrMatcher;
-import ag.com.main.Compound;
+//import java.util.Scanner;
+//import ag.com.main.Compound;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.json.*;
+
 //import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -21,22 +26,28 @@ public class TestEnviroment /**extends Application**/{
 	
 	private static String[] special = {"!","@","#", "$", "%","^","&","*","(",")","-",","};
 	
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		
 		
-		Scanner in = new Scanner(System.in);
-		System.out.println("type somthing");
-		String str = in.nextLine();
-
 		
-		if(con(str)){
-			System.out.println("No special charachters");
-		}else{
-			System.out.println("You may pass");
-		}
 		
-		in.close();
+//		Scanner in = new Scanner(System.in);
+//		System.out.println("type somthing");
+//		String str = in.nextLine();
+//
+//		
+//		if(con(str)){
+//			System.out.println("No special charachters");
+//		}else{
+//			System.out.println("You may pass");
+//		}
+//		
+//		in.close();
 //		launch(args);
+	}
+	
+	public static void jsonToArray(File file){
+		
 	}
 	
 	public static Boolean con(String str){
