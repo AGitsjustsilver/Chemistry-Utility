@@ -3,9 +3,24 @@ package ag.com.main;
 //import ag.com.main.Compound;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
+import java.util.Scanner;
 
-import org.json.*;
+import javax.json.Json;
+import javax.json.JsonArray;
+import javax.json.JsonObject;
+import javax.json.JsonReader;
+import javax.json.JsonString;
+import javax.json.JsonWriter;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 //import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -26,18 +41,16 @@ public class TestEnviroment /**extends Application**/{
 	
 	private static String[] special = {"!","@","#", "$", "%","^","&","*","(",")","-",","};
 	
-	public static void main(String[] args) {
-		
-		
-		
-		
+	
+	public static void main(String[] args) throws IOException{
+		System.out.println(getName(5));
 //		Scanner in = new Scanner(System.in);
-//		System.out.println("type somthing");
+//		System.out.println("type something");
 //		String str = in.nextLine();
 //
 //		
 //		if(con(str)){
-//			System.out.println("No special charachters");
+//			System.out.println("No special characters");
 //		}else{
 //			System.out.println("You may pass");
 //		}
@@ -45,11 +58,19 @@ public class TestEnviroment /**extends Application**/{
 //		in.close();
 //		launch(args);
 	}
+
 	
-	public static void jsonToArray(File file){
-		
+	public static String getName(int find) throws IOException{
+		String name = "";
+		FileInputStream in1;
+		File file = new File(el);
+		in1 = new FileInputStream(file);
+		JsonReader read = Json.createReader(in1);
+		JsonArray array = read.readArray();
+		name =  array.getJsonObject(find).getString("name");
+		return name;
 	}
-	
+
 	public static Boolean con(String str){
 		String[] split = getInd(str);
 		Boolean result = true;
