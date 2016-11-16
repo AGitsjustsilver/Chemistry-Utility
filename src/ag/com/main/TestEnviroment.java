@@ -41,6 +41,7 @@ public class TestEnviroment /**extends Application**/{
 	
 	private static String[] special = {"!","@","#", "$", "%","^","&","*","(",")","-",","};
 	
+	private static String el = "src/resources/Elements.json";
 	
 	public static void main(String[] args) throws IOException{
 		System.out.println(getName(5));
