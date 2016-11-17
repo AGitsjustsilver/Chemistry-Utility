@@ -49,39 +49,13 @@ public class Elements{
 				this.find = index ; 
 			}
 		}
+//		
+//		for (int d : ChemUtils.getInfo().)) {
+//			
+//		}
+		
 	}
 		
-	/**
-	 * Method that will take in a string with a certain set of conditions
-	 * 
-	 * @param String the actual Molecule
-	 * 
-	 */
-	public double getMolarMass(Compound comp){
-		/*
-		 * get a single string that is the compound. 
-		 * it then gets broken down into the respective atoms and number of atoms. 
-		 * And then gets each individual mass and adds them up. 
-		 */
-		double result = 0.0;
-		ArrayList<String> elements = comp.getElements();
-		ArrayList<Integer> numberOf = comp.getNumbers();
-		int lengths = (int)( ( elements.size() + numberOf.size() ) / 2 );
-		for(int i = 0; i < lengths; i++){
-			result += getMolarMass(elements.get(i), numberOf.get(i));	
-		}
-		return result;
-	}
-	
-	public double getMolarMass(String atom1, int numOfAtom1){
-		double result = 0.0;
-		atom1.trim();
-		Elements i = new Elements(atom1);
-		result += i.getAtomicMass(i.getFind());
-		result *= numOfAtom1;
-		return result;
-	}
-	
 	/**
 	 * Method used to help some of the validity checker 
 	 * @return find 
@@ -127,6 +101,37 @@ public class Elements{
 		return atomicMass[find];
 	}
 		
+	/**
+	 * Method that will take in a string with a certain set of conditions
+	 * 
+	 * @param String the actual Molecule
+	 * 
+	 */
+	public double getMolarMass(Compound comp){
+		/*
+		 * get a single string that is the compound. 
+		 * it then gets broken down into the respective atoms and number of atoms. 
+		 * And then gets each individual mass and adds them up. 
+		 */
+		double result = 0.0;
+		ArrayList<String> elements = comp.getElements();
+		ArrayList<Integer> numberOf = comp.getNumbers();
+		int lengths = (int)( ( elements.size() + numberOf.size() ) / 2 );
+		for(int i = 0; i < lengths; i++){
+			result += getMolarMass(elements.get(i), numberOf.get(i));	
+		}
+		return result;
+	}
+	
+	public double getMolarMass(String atom1, int numOfAtom1){
+		double result = 0.0;
+		atom1.trim();
+		Elements i = new Elements(atom1);
+		result += i.getAtomicMass(i.getFind());
+		result *= numOfAtom1;
+		return result;
+	}
+	
 	/**
 	 * Method that return the information of and element
 	 * @return Elements info

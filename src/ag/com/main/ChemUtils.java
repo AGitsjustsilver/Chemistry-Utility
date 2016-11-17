@@ -1,6 +1,12 @@
 package ag.com.main;
-import java.util.ArrayList;
 
+import java.util.ArrayList;
+import java.io.File;
+import java.io.IOException;
+import java.io.FileInputStream;
+import javax.json.Json;
+import javax.json.JsonArray;
+import javax.json.JsonReader;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.GridPane;
@@ -8,11 +14,20 @@ import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
-import org.apache.commons.lang3.text.*;
+
 public class ChemUtils {
 	
 	private static Elements in;
 	private static Compound in1;
+	public static String filePath = "src/resources/Elements.json";
+	
+	public static JsonArray getInfo() throws IOException{
+		File element = new File(filePath);
+		FileInputStream in = new FileInputStream(element);
+		JsonReader reader = Json.createReader(in);
+		JsonArray array = reader.readArray();
+		return array;
+	}
 	
 	public static void addText(GridPane grid, String text, int col, int row){
 		Text rules = new Text();
